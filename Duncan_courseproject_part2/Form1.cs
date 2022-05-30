@@ -16,5 +16,35 @@ namespace Duncan_courseproject_part2
         {
             InitializeComponent();
         }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            EmployeesListBox.Items.Add("New Employee");
+        }
+
+        private void Remove_Button_Click(object sender, EventArgs e)
+        {
+            int itemNumber = EmployeesListBox.SelectedIndex;
+
+            if (itemNumber > -1)
+            {
+                EmployeesListBox.Items.RemoveAt(itemNumber);
+            }
+            else
+            {
+                MessageBox.Show("Please select employee to remove.");
+            }
+
+        }
+
+        private void DipsplayButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Displaying all employees...");
+        }
+
+        private void PrintPaychecksButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Printing paychecks for all employees...");
+        }
     }
 }
