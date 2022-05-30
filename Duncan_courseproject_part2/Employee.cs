@@ -31,9 +31,10 @@ namespace Duncan_courseproject_part2
         // Behaviors
         public override string ToString()
         {
-            return firstName + " " + lastName + ", " +
+            return 
+                firstName + " " + lastName + ", " +
                 "SSN: " + ssn + ", " +
-                "Hire Date: " + hireDate.ToShortDateString();
+                "Hire Date: " + hireDate.ToShortDateString(); 
         }
         // Properties
         public string FirstName
