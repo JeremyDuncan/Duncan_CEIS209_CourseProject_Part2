@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.EmployeesListBox = new System.Windows.Forms.ListBox();
             this.AddButton = new System.Windows.Forms.Button();
             this.Remove_Button = new System.Windows.Forms.Button();
             this.DipsplayButton = new System.Windows.Forms.Button();
             this.PrintPaychecksButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listBox1
+            // EmployeesListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 90);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(475, 342);
-            this.listBox1.TabIndex = 0;
+            this.EmployeesListBox.FormattingEnabled = true;
+            this.EmployeesListBox.Location = new System.Drawing.Point(12, 90);
+            this.EmployeesListBox.Name = "EmployeesListBox";
+            this.EmployeesListBox.Size = new System.Drawing.Size(475, 342);
+            this.EmployeesListBox.TabIndex = 0;
             // 
             // AddButton
             // 
@@ -72,11 +72,11 @@
             // 
             // PrintPaychecksButton
             // 
-            this.PrintPaychecksButton.Location = new System.Drawing.Point(412, 40);
+            this.PrintPaychecksButton.Location = new System.Drawing.Point(386, 40);
             this.PrintPaychecksButton.Name = "PrintPaychecksButton";
-            this.PrintPaychecksButton.Size = new System.Drawing.Size(75, 23);
+            this.PrintPaychecksButton.Size = new System.Drawing.Size(101, 23);
             this.PrintPaychecksButton.TabIndex = 4;
-            this.PrintPaychecksButton.Text = "button4";
+            this.PrintPaychecksButton.Text = "Print Paychecks";
             this.PrintPaychecksButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
@@ -88,7 +88,7 @@
             this.Controls.Add(this.DipsplayButton);
             this.Controls.Add(this.Remove_Button);
             this.Controls.Add(this.AddButton);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.EmployeesListBox);
             this.Name = "MainForm";
             this.Text = "Payroll System";
             this.ResumeLayout(false);
@@ -97,7 +97,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox EmployeesListBox;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button Remove_Button;
         private System.Windows.Forms.Button DipsplayButton;
