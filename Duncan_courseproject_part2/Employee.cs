@@ -50,5 +50,21 @@ namespace Duncan_courseproject_part2
             }
         }
 
+        public string SSN
+        {
+            get { return ssn; }
+            set
+            {
+                if (value.Length > 0)
+                {
+                    ssn = value;
+                }
+                else
+                {
+                    ssn = "unknown";
+                }
+            }
+        }
+
     }
 }
