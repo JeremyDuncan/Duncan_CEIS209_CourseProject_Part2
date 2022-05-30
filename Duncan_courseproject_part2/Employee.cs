@@ -14,57 +14,47 @@ namespace Duncan_courseproject_part2
         private DateTime hireDate;
 
         // Constructors
-
+        public Employee()
+        {
+            firstName = "unknown";
+            lastName = "unknown";
+            ssn = "unknown";
+            hireDate = DateTime.MinValue;
+        }
+        public Employee( string firstName, string lastName, string ssn, DateTime hireDate)
+        {
+            this.FirstName = firstName; 
+            this.LastName = lastName;
+            this.SSN = ssn; 
+            this.HireDate = hireDate;
+        }
         // Behaviors
-
+        public override string ToString()
+        {
+            return firstName + " " + lastName + ", " +
+                "SSN: " + ssn + ", " +
+                "Hire Date: " + hireDate.ToShortDateString();
+        }
         // Properties
         public string FirstName
         {
             get { return firstName; }
-            set
-            {
-                if (value.Length > 0)
-                {
-                    firstName = value;
-                }
-                else
-                {
-                    firstName = "unknown";
-                }
-            }
+            set { firstName = ((value.Length > 0) ? value : "unknown"); }
         }
-
         public string LastName
         {
             get { return lastName; }
-            set
-            {
-                if (value.Length > 0)
-                {
-                    lastName = value;
-                }
-                else
-                {
-                    lastName = "unknown";
-                }
-            }
+            set { lastName = ((value.Length > 0) ? value : "unknown"); }
         }
-
         public string SSN
         {
             get { return ssn; }
-            set
-            {
-                if (value.Length > 0)
-                {
-                    ssn = value;
-                }
-                else
-                {
-                    ssn = "unknown";
-                }
-            }
+            set { ssn = ((value.Length > 0) ? value : "unknown"); }
         }
-
+        public DateTime HireDate
+        {
+            get { return hireDate; }
+            set { hireDate = ((value.Year >= 1950 && value.Year <= DateTime.Now.Year + 1) ? value : DateTime.MinValue); }
+        }
     }
 }
