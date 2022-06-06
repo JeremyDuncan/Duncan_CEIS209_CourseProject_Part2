@@ -42,20 +42,26 @@ namespace Duncan_courseproject_part2
                 // add the Employee object to the employees listbox
                 EmployeesListBox.Items.Add(emp);
 
-                string fileName = "Employees.csv";
-                StreamWriter sw = new StreamWriter(fileName);
-                for (int i = 0; i < EmployeesListBox.Items.Count; i++)
-                {
-                    Employee worker = (Employee)EmployeesListBox.Items[i];
-                    sw.WriteLine(worker.FirstName + "," +
-                                 worker.LastName + "," +
-                                 worker.SSN + "," + 
-                                 worker.HireDate.ToShortDateString());
-                }
-                sw.Close();
-                MessageBox.Show("Employees were written to the file");
+                // Write all employee objects to file
+                WriteEmpsToFile();
             }
 
+        }
+
+        private void WriteEmpsToFile()
+        {
+            string fileName = "Employees.csv";
+            StreamWriter sw = new StreamWriter(fileName);
+            for (int i = 0; i < EmployeesListBox.Items.Count; i++)
+            {
+                Employee worker = (Employee)EmployeesListBox.Items[i];
+                sw.WriteLine(worker.FirstName + "," +
+                             worker.LastName + "," +
+                             worker.SSN + "," +
+                             worker.HireDate.ToShortDateString());
+            }
+            sw.Close();
+            MessageBox.Show("Employees were written to the file");
         }
 
         private void Remove_Button_Click(object sender, EventArgs e)
@@ -65,6 +71,8 @@ namespace Duncan_courseproject_part2
             if (itemNumber > -1)
             {
                 EmployeesListBox.Items.RemoveAt(itemNumber);
+                // Write all employee objects to file
+                WriteEmpsToFile();
             }
             else
             {
