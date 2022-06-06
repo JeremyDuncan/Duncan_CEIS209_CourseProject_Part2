@@ -119,5 +119,11 @@ namespace Duncan_courseproject_part2
         {
             MessageBox.Show("Printing paychecks for all employees...");
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            // Load employees from file
+            ReadEmpsFromFile();
+        }
     }
 }

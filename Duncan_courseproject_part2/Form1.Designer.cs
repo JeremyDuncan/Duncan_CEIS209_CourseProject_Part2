@@ -95,6 +95,7 @@
             this.Controls.Add(this.EmployeesListBox);
             this.Name = "MainForm";
             this.Text = "Payroll System";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }
