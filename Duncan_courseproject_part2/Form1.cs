@@ -61,7 +61,7 @@ namespace Duncan_courseproject_part2
                              worker.HireDate.ToShortDateString());
             }
             sw.Close();
-            MessageBox.Show("Employees were written to the file");
+            MessageBox.Show("Employees file has been updated.");
         }
 
         private void Remove_Button_Click(object sender, EventArgs e)
@@ -83,7 +83,36 @@ namespace Duncan_courseproject_part2
 
         private void DipsplayButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Displaying all employees...");
+            // Clear listbox
+            EmployeesListBox.Items.Clear();
+
+            // Displays Saved employee Objects
+            ReadEmpsFromFile();
+        }
+
+        private void ReadEmpsFromFile()
+        {
+            // Read all employee objects from save file
+            string fileName = "Employees.csv";
+            StreamReader sr = new StreamReader(fileName);
+            using (sr)
+            {
+                while (sr.Peek() > -1)
+                {
+                    // Read the line and break it up into parts based on commas
+                    string line = sr.ReadLine();
+                    string[] parts = line.Split(',');
+
+                    string fName = parts[0];
+                    string lName = parts[1];
+                    string ssn = parts[2];
+                    DateTime hireDate = DateTime.Parse(parts[3]);
+
+                    // Create employee object and add it to listbox
+                    Employee emp = new Employee(fName, lName, ssn, hireDate);
+                    EmployeesListBox.Items.Add(emp);
+                }
+            }
         }
 
         private void PrintPaychecksButton_Click(object sender, EventArgs e)
