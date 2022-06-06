@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Duncan_courseproject_part2
 {
@@ -40,6 +41,19 @@ namespace Duncan_courseproject_part2
 
                 // add the Employee object to the employees listbox
                 EmployeesListBox.Items.Add(emp);
+
+                string fileName = "Employees.csv";
+                StreamWriter sw = new StreamWriter(fileName);
+                for (int i = 0; i < EmployeesListBox.Items.Count; i++)
+                {
+                    Employee worker = (Employee)EmployeesListBox.Items[i];
+                    sw.WriteLine(worker.FirstName + "," +
+                                 worker.LastName + "," +
+                                 worker.SSN + "," + 
+                                 worker.HireDate.ToShortDateString());
+                }
+                sw.Close();
+                MessageBox.Show("Employees were written to the file");
             }
 
         }
