@@ -10,11 +10,23 @@ using System.Windows.Forms;
 
 namespace Duncan_courseproject_part2
 {
-    public partial class inputForm : Form
+    public partial class InputForm : Form
     {
-        public inputForm()
+        public InputForm()
         {
             InitializeComponent();
+        }
+
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Hide();
+
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

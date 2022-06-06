@@ -1,6 +1,6 @@
 ﻿namespace Duncan_courseproject_part2
 {
-    partial class inputForm
+    partial class InputForm
     {
         /// <summary>
         /// Required designer variable.
@@ -49,6 +49,7 @@
             this.SubmitButton.TabIndex = 0;
             this.SubmitButton.Text = "Submit";
             this.SubmitButton.UseVisualStyleBackColor = true;
+            this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
             // CancelButton
             // 
@@ -58,6 +59,7 @@
             this.CancelButton.TabIndex = 1;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // FirstNameTextBox
             // 
@@ -123,7 +125,7 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Hire Date:";
             // 
-            // inputForm
+            // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -138,8 +140,8 @@
             this.Controls.Add(this.FirstNameTextBox);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.SubmitButton);
-            this.Name = "inputForm";
-            this.Text = "inputForm";
+            this.Name = "InputForm";
+            this.Text = "InputForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 

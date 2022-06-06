@@ -19,7 +19,29 @@ namespace Duncan_courseproject_part2
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            EmployeesListBox.Items.Add("New Employee");
+            InputForm frmInput = new InputForm();
+
+            using (frmInput)
+            {
+                DialogResult result = frmInput.ShowDialog();
+
+                // see if input form was cancelled
+                if (result == DialogResult.Cancel)
+                    return;    //  end the method since the user cancelled the input
+
+                // get user's input and create an Employee object
+                string fName = frmInput.FirstNameTextBox.Text;
+                string lName = frmInput.LastNameTextBox.Text;
+                string ssn = frmInput.SSNTextBox.Text;
+                string date = frmInput.HireDateTextBox.Text;
+                DateTime hireDate = DateTime.Parse(date);
+
+                Employee emp = new Employee(fName, lName, ssn, hireDate);
+
+                // add the Employee object to the employees listbox
+                EmployeesListBox.Items.Add(emp);
+            }
+
         }
 
         private void Remove_Button_Click(object sender, EventArgs e)
