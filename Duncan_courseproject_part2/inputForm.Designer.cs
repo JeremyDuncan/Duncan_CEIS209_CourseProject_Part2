@@ -40,11 +40,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.VacationTextBox = new System.Windows.Forms.TextBox();
+            this.LifeInsTextBox = new System.Windows.Forms.TextBox();
+            this.HealthInsTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // SubmitButton
             // 
-            this.SubmitButton.Location = new System.Drawing.Point(64, 310);
+            this.SubmitButton.Location = new System.Drawing.Point(67, 242);
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(75, 23);
             this.SubmitButton.TabIndex = 0;
@@ -54,7 +61,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(154, 310);
+            this.CancelButton.Location = new System.Drawing.Point(157, 242);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 1;
@@ -128,18 +135,72 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(31, 140);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.HealthInsTextBox);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.LifeInsTextBox);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.VacationTextBox);
+            this.groupBox1.Location = new System.Drawing.Point(31, 133);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(266, 113);
+            this.groupBox1.Size = new System.Drawing.Size(256, 103);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Benefits";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(20, 70);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Vacation Days:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(20, 48);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Life Insurance:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(20, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Health Insurance:";
+            // 
+            // VacationTextBox
+            // 
+            this.VacationTextBox.Location = new System.Drawing.Point(112, 63);
+            this.VacationTextBox.Name = "VacationTextBox";
+            this.VacationTextBox.Size = new System.Drawing.Size(120, 20);
+            this.VacationTextBox.TabIndex = 13;
+            // 
+            // LifeInsTextBox
+            // 
+            this.LifeInsTextBox.Location = new System.Drawing.Point(112, 41);
+            this.LifeInsTextBox.Name = "LifeInsTextBox";
+            this.LifeInsTextBox.Size = new System.Drawing.Size(120, 20);
+            this.LifeInsTextBox.TabIndex = 12;
+            // 
+            // HealthInsTextBox
+            // 
+            this.HealthInsTextBox.Location = new System.Drawing.Point(112, 19);
+            this.HealthInsTextBox.Name = "HealthInsTextBox";
+            this.HealthInsTextBox.Size = new System.Drawing.Size(120, 20);
+            this.HealthInsTextBox.TabIndex = 11;
             // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 345);
+            this.ClientSize = new System.Drawing.Size(316, 272);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -153,6 +214,8 @@
             this.Controls.Add(this.SubmitButton);
             this.Name = "InputForm";
             this.Text = "InputForm";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,5 +235,11 @@
         public System.Windows.Forms.TextBox SSNTextBox;
         public System.Windows.Forms.TextBox HireDateTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox HealthInsTextBox;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox LifeInsTextBox;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox VacationTextBox;
     }
 }
