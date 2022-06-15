@@ -39,11 +39,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
             // 
             // SubmitButton
             // 
-            this.SubmitButton.Location = new System.Drawing.Point(37, 172);
+            this.SubmitButton.Location = new System.Drawing.Point(64, 310);
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(75, 23);
             this.SubmitButton.TabIndex = 0;
@@ -53,7 +54,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(127, 172);
+            this.CancelButton.Location = new System.Drawing.Point(154, 310);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 1;
@@ -70,21 +71,21 @@
             // 
             // LastNameTextBox
             // 
-            this.LastNameTextBox.Location = new System.Drawing.Point(92, 64);
+            this.LastNameTextBox.Location = new System.Drawing.Point(92, 51);
             this.LastNameTextBox.Name = "LastNameTextBox";
             this.LastNameTextBox.Size = new System.Drawing.Size(120, 20);
             this.LastNameTextBox.TabIndex = 3;
             // 
             // SSNTextBox
             // 
-            this.SSNTextBox.Location = new System.Drawing.Point(92, 100);
+            this.SSNTextBox.Location = new System.Drawing.Point(92, 73);
             this.SSNTextBox.Name = "SSNTextBox";
             this.SSNTextBox.Size = new System.Drawing.Size(120, 20);
             this.SSNTextBox.TabIndex = 4;
             // 
             // HireDateTextBox
             // 
-            this.HireDateTextBox.Location = new System.Drawing.Point(92, 136);
+            this.HireDateTextBox.Location = new System.Drawing.Point(92, 95);
             this.HireDateTextBox.Name = "HireDateTextBox";
             this.HireDateTextBox.Size = new System.Drawing.Size(120, 20);
             this.HireDateTextBox.TabIndex = 5;
@@ -101,7 +102,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 71);
+            this.label2.Location = new System.Drawing.Point(28, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 7;
@@ -110,7 +111,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 107);
+            this.label3.Location = new System.Drawing.Point(28, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 8;
@@ -119,17 +120,27 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 143);
+            this.label4.Location = new System.Drawing.Point(28, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Hire Date:";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(31, 140);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(266, 113);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Benefits";
+            // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(243, 215);
+            this.ClientSize = new System.Drawing.Size(381, 345);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -160,5 +171,6 @@
         public System.Windows.Forms.TextBox LastNameTextBox;
         public System.Windows.Forms.TextBox SSNTextBox;
         public System.Windows.Forms.TextBox HireDateTextBox;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
