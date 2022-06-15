@@ -13,6 +13,7 @@ namespace Duncan_courseproject_part2
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+
             InputForm frmInput = new InputForm();
 
             using (frmInput)
@@ -157,7 +158,7 @@ namespace Duncan_courseproject_part2
                     frmUpdate.VacationTextBox.Text = emp.BenefitsPackage.Vacation.ToString();
 
                     DialogResult result = frmUpdate.ShowDialog();
-
+                    
                     if (result == DialogResult.Cancel)
                     {
                         return; //End the Method siince user cancelled the update
