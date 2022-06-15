@@ -43,7 +43,7 @@ namespace Duncan_courseproject_part2
                 if (value > 0.0 && value < 1000000.0)
                     annualSalary = value;
                 else
-                    anualSalary = 0.0
+                    annualSalary = 0.0;
             }
         }   
     }
