@@ -12,6 +12,7 @@ namespace Duncan_courseproject_part2
         private string lastName;
         private string ssn;
         private DateTime hireDate;
+        private Benefits benefits;
 
         // Constructors
         public Employee()
@@ -20,13 +21,16 @@ namespace Duncan_courseproject_part2
             lastName = "unknown";
             ssn = "unknown";
             hireDate = DateTime.MinValue;
+
         }
-        public Employee( string firstName, string lastName, string ssn, DateTime hireDate)
+        public Employee( string firstName, string lastName, string ssn, DateTime hireDate, Benefits benefits)
         {
             this.FirstName = firstName; 
             this.LastName = lastName;
             this.SSN = ssn; 
             this.HireDate = hireDate;
+            BenefitsPackage = benefits;
+            
         }
         // Behaviors
         public override string ToString()
@@ -56,6 +60,12 @@ namespace Duncan_courseproject_part2
         {
             get { return hireDate; }
             set { hireDate = ((value.Year >= 1950 && value.Year <= DateTime.Now.Year + 1) ? value : DateTime.MinValue); }
+        }
+
+        public Benefits BenefitsPackage
+        {
+            get { return benefits; }
+            set { this.benefits = value; }
         }
     }
 }

@@ -39,14 +39,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BenefitsPackage = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.HealthInsTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.LifeInsTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.VacationTextBox = new System.Windows.Forms.TextBox();
-            this.LifeInsTextBox = new System.Windows.Forms.TextBox();
-            this.HealthInsTextBox = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
+            this.BenefitsPackage.SuspendLayout();
             this.SuspendLayout();
             // 
             // SubmitButton
@@ -133,20 +133,20 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Hire Date:";
             // 
-            // groupBox1
+            // BenefitsPackage
             // 
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.HealthInsTextBox);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.LifeInsTextBox);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.VacationTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(31, 133);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(256, 103);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Benefits";
+            this.BenefitsPackage.Controls.Add(this.label5);
+            this.BenefitsPackage.Controls.Add(this.HealthInsTextBox);
+            this.BenefitsPackage.Controls.Add(this.label6);
+            this.BenefitsPackage.Controls.Add(this.LifeInsTextBox);
+            this.BenefitsPackage.Controls.Add(this.label7);
+            this.BenefitsPackage.Controls.Add(this.VacationTextBox);
+            this.BenefitsPackage.Location = new System.Drawing.Point(31, 133);
+            this.BenefitsPackage.Name = "BenefitsPackage";
+            this.BenefitsPackage.Size = new System.Drawing.Size(256, 103);
+            this.BenefitsPackage.TabIndex = 10;
+            this.BenefitsPackage.TabStop = false;
+            this.BenefitsPackage.Text = "Benefits";
             // 
             // label5
             // 
@@ -157,6 +157,13 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "Vacation Days:";
             // 
+            // HealthInsTextBox
+            // 
+            this.HealthInsTextBox.Location = new System.Drawing.Point(112, 19);
+            this.HealthInsTextBox.Name = "HealthInsTextBox";
+            this.HealthInsTextBox.Size = new System.Drawing.Size(120, 20);
+            this.HealthInsTextBox.TabIndex = 11;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -165,6 +172,13 @@
             this.label6.Size = new System.Drawing.Size(77, 13);
             this.label6.TabIndex = 15;
             this.label6.Text = "Life Insurance:";
+            // 
+            // LifeInsTextBox
+            // 
+            this.LifeInsTextBox.Location = new System.Drawing.Point(112, 41);
+            this.LifeInsTextBox.Name = "LifeInsTextBox";
+            this.LifeInsTextBox.Size = new System.Drawing.Size(120, 20);
+            this.LifeInsTextBox.TabIndex = 12;
             // 
             // label7
             // 
@@ -182,26 +196,12 @@
             this.VacationTextBox.Size = new System.Drawing.Size(120, 20);
             this.VacationTextBox.TabIndex = 13;
             // 
-            // LifeInsTextBox
-            // 
-            this.LifeInsTextBox.Location = new System.Drawing.Point(112, 41);
-            this.LifeInsTextBox.Name = "LifeInsTextBox";
-            this.LifeInsTextBox.Size = new System.Drawing.Size(120, 20);
-            this.LifeInsTextBox.TabIndex = 12;
-            // 
-            // HealthInsTextBox
-            // 
-            this.HealthInsTextBox.Location = new System.Drawing.Point(112, 19);
-            this.HealthInsTextBox.Name = "HealthInsTextBox";
-            this.HealthInsTextBox.Size = new System.Drawing.Size(120, 20);
-            this.HealthInsTextBox.TabIndex = 11;
-            // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(316, 272);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.BenefitsPackage);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -214,8 +214,8 @@
             this.Controls.Add(this.SubmitButton);
             this.Name = "InputForm";
             this.Text = "InputForm";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.BenefitsPackage.ResumeLayout(false);
+            this.BenefitsPackage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,7 +224,6 @@
         #endregion
 
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.Button SubmitButton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -234,12 +233,13 @@
         public System.Windows.Forms.TextBox LastNameTextBox;
         public System.Windows.Forms.TextBox SSNTextBox;
         public System.Windows.Forms.TextBox HireDateTextBox;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox BenefitsPackage;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox HealthInsTextBox;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox LifeInsTextBox;
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.TextBox VacationTextBox;
+        public System.Windows.Forms.Button SubmitButton;
     }
 }

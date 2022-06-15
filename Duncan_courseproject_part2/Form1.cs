@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Duncan_courseproject_part2
 {
@@ -36,8 +29,12 @@ namespace Duncan_courseproject_part2
                 string ssn = frmInput.SSNTextBox.Text;
                 string date = frmInput.HireDateTextBox.Text;
                 DateTime hireDate = DateTime.Parse(date);
+                string healthIns = frmInput.HealthInsTextBox.Text;
+                double lifeIns = Double.Parse(frmInput.LifeInsTextBox.Text);  
+                int vacation = Int32.Parse(frmInput.VacationTextBox.Text);
 
-                Employee emp = new Employee(fName, lName, ssn, hireDate);
+                Benefits benefits = new Benefits(healthIns, lifeIns, vacation);
+                Employee emp = new Employee(fName, lName, ssn, hireDate, benefits);
 
                 // add the Employee object to the employees listbox
                 EmployeesListBox.Items.Add(emp);
@@ -58,7 +55,11 @@ namespace Duncan_courseproject_part2
                 sw.WriteLine(worker.FirstName + "," +
                              worker.LastName + "," +
                              worker.SSN + "," +
-                             worker.HireDate.ToShortDateString());
+                             worker.HireDate.ToShortDateString() + "," +
+                             worker.BenefitsPackage.HealthIns + "," +
+                             worker.BenefitsPackage.LifeIns + "," +
+                             worker.BenefitsPackage.Vacation);
+
             }
             sw.Close();
             MessageBox.Show("Employees file has been updated.");
@@ -107,9 +108,13 @@ namespace Duncan_courseproject_part2
                     string lName = parts[1];
                     string ssn = parts[2];
                     DateTime hireDate = DateTime.Parse(parts[3]);
+                    string healthIns = parts[4];
+                    double lifeIns = Double.Parse(parts[5]);
+                    int vacation = Int32.Parse(parts[6]);
 
                     // Create employee object and add it to listbox
-                    Employee emp = new Employee(fName, lName, ssn, hireDate);
+                    Benefits benefits = new Benefits(healthIns, lifeIns, vacation);
+                    Employee emp = new Employee(fName, lName, ssn, hireDate, benefits);
                     EmployeesListBox.Items.Add(emp);
                 }
             }
@@ -124,6 +129,67 @@ namespace Duncan_courseproject_part2
         {
             // Load employees from file
             ReadEmpsFromFile();
+        }
+
+        private void EmployeesListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            // edit selscted employee in the listbox
+
+            InputForm frmUpdate = new InputForm();
+
+            using(frmUpdate)
+            {
+                frmUpdate.Text = "Employee Update Form";
+                frmUpdate.SubmitButton.Text = "Update";
+
+                int itemNumber = EmployeesListBox.SelectedIndex;
+              
+                if (itemNumber >= 0)
+                {
+                    Employee emp = (Employee)EmployeesListBox.Items[itemNumber];
+
+                    frmUpdate.FirstNameTextBox.Text = emp.FirstName;
+                    frmUpdate.LastNameTextBox.Text = emp.LastName;
+                    frmUpdate.SSNTextBox.Text = emp.SSN;
+                    frmUpdate.HireDateTextBox.Text = emp.HireDate.ToShortDateString();
+                    frmUpdate.HealthInsTextBox.Text = emp.BenefitsPackage.HealthIns;
+                    frmUpdate.LifeInsTextBox.Text = emp.BenefitsPackage.LifeIns.ToString("C2");
+                    frmUpdate.VacationTextBox.Text = emp.BenefitsPackage.Vacation.ToString();
+
+                    DialogResult result = frmUpdate.ShowDialog();
+
+                    if (result == DialogResult.Cancel)
+                    {
+                        return; //End the Method siince user cancelled the update
+                    }
+
+                    EmployeesListBox.Items.RemoveAt(itemNumber);
+
+                    string fName = frmUpdate.FirstNameTextBox.Text;
+                    string lName = frmUpdate.LastNameTextBox.Text;
+                    string ssn = frmUpdate.SSNTextBox.Text;
+                    string date = frmUpdate.HireDateTextBox.Text;
+                    DateTime hireDate = DateTime.Parse(date);
+                    string healthIns = frmUpdate.HealthInsTextBox.Text;
+
+                    // pull a substring that does not contain the initial '$' sign
+                    string lifeInsString = frmUpdate.LifeInsTextBox.Text;
+                    lifeInsString = lifeInsString.Substring(1);
+
+                    double lifeIns = Double.Parse(lifeInsString);
+                    int vacation = Int32.Parse(frmUpdate.VacationTextBox.Text);
+
+                    Benefits benefits = new Benefits(healthIns, lifeIns, vacation);
+                    emp = new Employee(fName, lName, ssn, hireDate, benefits);
+
+                    //add the updated Employee object to the employees listbox
+                    EmployeesListBox.Items.Add(emp);
+
+                    // write all of the updated Employee objects to the file
+                    WriteEmpsToFile();
+                }
+
+            }
         }
     }
 }

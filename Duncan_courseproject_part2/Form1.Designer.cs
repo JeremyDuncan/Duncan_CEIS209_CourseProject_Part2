@@ -42,6 +42,7 @@
             this.EmployeesListBox.Name = "EmployeesListBox";
             this.EmployeesListBox.Size = new System.Drawing.Size(475, 186);
             this.EmployeesListBox.TabIndex = 0;
+            this.EmployeesListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.EmployeesListBox_MouseDoubleClick);
             // 
             // AddButton
             // 
