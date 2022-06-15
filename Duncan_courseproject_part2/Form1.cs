@@ -35,7 +35,28 @@ namespace Duncan_courseproject_part2
                 int vacation = Int32.Parse(frmInput.VacationTextBox.Text);
 
                 Benefits benefits = new Benefits(healthIns, lifeIns, vacation);
-                Employee emp = new Employee(fName, lName, ssn, hireDate, benefits);
+                Employee emp;
+                if(frmInput.HourlyRadioButton.Checked)
+                {
+                    // get child items
+                    float hourlyRate = float.Parse(frmInput.Pay1TextBox.Text);
+                    float hoursWorked = Convert.ToSingle(frmInput.Pay2TextBox.Text);
+
+                    // polymorphism
+                    emp = new Hourly(fName, lName, ssn, hireDate, benefits, hourlyRate, hoursWorked);
+                } else if (frmInput.SalaryRadioButton.Checked)
+                {
+                    //get child items
+                    double salary = Double.Parse(frmInput.Pay1TextBox.Text);
+
+                    emp = new Salary(fName, lName, ssn, hireDate, benefits, salary) ;
+                }
+                else
+                {
+                    MessageBox.Show("ERROR. Invalid Employee Type.");
+                    return;
+                }
+
 
                 // add the Employee object to the employees listbox
                 EmployeesListBox.Items.Add(emp);

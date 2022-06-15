@@ -251,7 +251,7 @@
             this.label8.Location = new System.Drawing.Point(31, 189);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(146, 30);
+            this.label8.Size = new System.Drawing.Size(97, 20);
             this.label8.TabIndex = 14;
             this.label8.Text = "Hourly Rate:";
             // 
@@ -269,7 +269,7 @@
             this.Pay2Label.Location = new System.Drawing.Point(31, 225);
             this.Pay2Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Pay2Label.Name = "Pay2Label";
-            this.Pay2Label.Size = new System.Drawing.Size(173, 30);
+            this.Pay2Label.Size = new System.Drawing.Size(115, 20);
             this.Pay2Label.TabIndex = 16;
             this.Pay2Label.Text = "Hours Worked:";
             // 
@@ -338,12 +338,12 @@
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.TextBox VacationTextBox;
         public System.Windows.Forms.Button SubmitButton;
-        private System.Windows.Forms.RadioButton HourlyRadioButton;
-        private System.Windows.Forms.RadioButton SalaryRadioButton;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox Pay1TextBox;
         private System.Windows.Forms.Label Pay2Label;
         public System.Windows.Forms.TextBox Pay2TextBox;
         private System.Diagnostics.EventLog eventLog1;
+        public System.Windows.Forms.RadioButton HourlyRadioButton;
+        public System.Windows.Forms.RadioButton SalaryRadioButton;
     }
 }
