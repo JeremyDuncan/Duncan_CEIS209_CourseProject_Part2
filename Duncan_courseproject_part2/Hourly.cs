@@ -34,6 +34,22 @@ namespace Duncan_courseproject_part2
             + ", Hours Worked: " + hoursWorked.ToString();
         }
 
+        public override double CalculatePay()
+        {
+            double pay = 0.0;
+            if (hoursWorked > 40.0f)
+            {
+                double basePay = HourlyRate * 40.0f;
+                double overtime = (hoursWorked - 40.0f) * hourlyRate * 1.5f;
+                pay = basePay + overtime;
+            } else
+            {
+                pay = hoursWorked * hourlyRate;
+            }
+
+            return pay;
+        }
+
         // properties
         public float HourlyRate
         {

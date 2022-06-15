@@ -28,5 +28,10 @@ namespace Duncan_courseproject_part2
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+        private void SalaryRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

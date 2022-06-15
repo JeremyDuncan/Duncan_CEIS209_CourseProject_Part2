@@ -40,6 +40,12 @@ namespace Duncan_courseproject_part2
                 "SSN: " + ssn + ", " +
                 "Hire Date: " + hireDate.ToShortDateString(); 
         }
+
+        public virtual double CalculatePay()
+        {
+            return 0.0;
+        }
+
         // Properties
         public string FirstName
         {
