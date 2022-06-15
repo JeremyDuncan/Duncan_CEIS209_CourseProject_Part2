@@ -31,6 +31,11 @@ namespace Duncan_courseproject_part2
             return base.ToString() + ", Salary: " + annualSalary.ToString("C");
         }
 
+        public override double CalculatePay()
+        {
+            return annualSalary / 26.0;
+        }
+
         // properties
         public double AnnualSalary
         {
