@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Duncan_courseproject_part2
 {
+    [Serializable]
+
     internal class Benefits
     {
         private string healthIns;

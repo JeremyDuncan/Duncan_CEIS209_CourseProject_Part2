@@ -143,33 +143,6 @@ namespace Duncan_courseproject_part2
                 foreach(Employee emp in empList)
                     EmployeesListBox.Items.Add(emp);
             }
-
-  
-
-
-            StreamReader sr = new StreamReader(fileName);
-            using (sr)
-            {
-                while (sr.Peek() > -1)
-                {
-                    // Read the line and break it up into parts based on commas
-                    string line = sr.ReadLine();
-                    string[] parts = line.Split(',');
-
-                    string fName = parts[0];
-                    string lName = parts[1];
-                    string ssn = parts[2];
-                    DateTime hireDate = DateTime.Parse(parts[3]);
-                    string healthIns = parts[4];
-                    double lifeIns = Double.Parse(parts[5]);
-                    int vacation = Int32.Parse(parts[6]);
-
-                    // Create employee object and add it to listbox
-                    Benefits benefits = new Benefits(healthIns, lifeIns, vacation);
-                    Employee emp = new Employee(fName, lName, ssn, hireDate, benefits);
-                    EmployeesListBox.Items.Add(emp);
-                }
-            }
         }
 
         private void PrintPaychecksButton_Click(object sender, EventArgs e)
