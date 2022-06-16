@@ -8,6 +8,10 @@ namespace Duncan_courseproject_part2
 {
     public partial class MainForm : Form
     {
+        // form level referrences
+        const string FILENAME = "Employees.dat";
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -71,7 +75,6 @@ namespace Duncan_courseproject_part2
 
         private void WriteEmpsToFile()
         {
-
             // convert lisbox items to generic list
             List<Employee> empList = new List<Employee>();
 
@@ -81,7 +84,7 @@ namespace Duncan_courseproject_part2
             }
 
             // open pipe to file and creat translator
-            FileStream fs = new FileStream("Clients.dat", FileMode.Create);
+            FileStream fs = new FileStream(FILENAME, FileMode.Create);
             BinaryFormatter formatter = new BinaryFormatter();
 
             // write the generic list to the file
@@ -122,8 +125,28 @@ namespace Duncan_courseproject_part2
 
         private void ReadEmpsFromFile()
         {
-            // Read all employee objects from save file
-            string fileName = "Employees.csv";
+            // check to see if the file exists
+            if (File.Exists(FILENAME))
+            {
+                // create a pipe from the file and create the "translator"
+                FileStream fs = new FileStream(FILENAME, FileMode.Open);
+                BinaryFormatter formatter = new BinaryFormatter();
+
+
+                // Read all employee objects from save file
+                List<Employee> empList = (List<Employee>)formatter.Deserialize(fs);
+
+                // close the pipe
+                fs.Close();
+
+                // copy the Employee objects into our listbox
+                foreach(Employee emp in empList)
+                    EmployeesListBox.Items.Add(emp);
+            }
+
+  
+
+
             StreamReader sr = new StreamReader(fileName);
             using (sr)
             {
