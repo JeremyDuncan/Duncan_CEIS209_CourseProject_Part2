@@ -126,7 +126,7 @@ namespace Duncan_courseproject_part2
         private void ReadEmpsFromFile()
         {
             // check to see if the file exists
-            if (File.Exists(FILENAME))
+            if (File.Exists(FILENAME) && new FileInfo(FILENAME).Length > 0)
             {
                 // create a pipe from the file and create the "translator"
                 FileStream fs = new FileStream(FILENAME, FileMode.Open);
