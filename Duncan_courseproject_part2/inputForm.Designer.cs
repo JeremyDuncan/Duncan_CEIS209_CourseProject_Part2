@@ -48,7 +48,7 @@
             this.VacationTextBox = new System.Windows.Forms.TextBox();
             this.HourlyRadioButton = new System.Windows.Forms.RadioButton();
             this.SalaryRadioButton = new System.Windows.Forms.RadioButton();
-            this.label8 = new System.Windows.Forms.Label();
+            this.Pay1Label = new System.Windows.Forms.Label();
             this.Pay1TextBox = new System.Windows.Forms.TextBox();
             this.Pay2Label = new System.Windows.Forms.Label();
             this.Pay2TextBox = new System.Windows.Forms.TextBox();
@@ -63,7 +63,7 @@
             this.SubmitButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(112, 35);
-            this.SubmitButton.TabIndex = 0;
+            this.SubmitButton.TabIndex = 9;
             this.SubmitButton.Text = "Submit";
             this.SubmitButton.UseVisualStyleBackColor = true;
             this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
@@ -74,7 +74,7 @@
             this.CancelButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(112, 35);
-            this.CancelButton.TabIndex = 1;
+            this.CancelButton.TabIndex = 10;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
@@ -164,7 +164,7 @@
             this.BenefitsPackage.Name = "BenefitsPackage";
             this.BenefitsPackage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BenefitsPackage.Size = new System.Drawing.Size(384, 137);
-            this.BenefitsPackage.TabIndex = 10;
+            this.BenefitsPackage.TabIndex = 8;
             this.BenefitsPackage.TabStop = false;
             this.BenefitsPackage.Text = "Benefits";
             // 
@@ -184,7 +184,7 @@
             this.HealthInsTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.HealthInsTextBox.Name = "HealthInsTextBox";
             this.HealthInsTextBox.Size = new System.Drawing.Size(178, 26);
-            this.HealthInsTextBox.TabIndex = 11;
+            this.HealthInsTextBox.TabIndex = 0;
             // 
             // label6
             // 
@@ -202,7 +202,7 @@
             this.LifeInsTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LifeInsTextBox.Name = "LifeInsTextBox";
             this.LifeInsTextBox.Size = new System.Drawing.Size(178, 26);
-            this.LifeInsTextBox.TabIndex = 12;
+            this.LifeInsTextBox.TabIndex = 1;
             // 
             // label7
             // 
@@ -220,7 +220,7 @@
             this.VacationTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.VacationTextBox.Name = "VacationTextBox";
             this.VacationTextBox.Size = new System.Drawing.Size(178, 26);
-            this.VacationTextBox.TabIndex = 13;
+            this.VacationTextBox.TabIndex = 2;
             // 
             // HourlyRadioButton
             // 
@@ -229,10 +229,11 @@
             this.HourlyRadioButton.Location = new System.Drawing.Point(35, 18);
             this.HourlyRadioButton.Name = "HourlyRadioButton";
             this.HourlyRadioButton.Size = new System.Drawing.Size(79, 24);
-            this.HourlyRadioButton.TabIndex = 11;
+            this.HourlyRadioButton.TabIndex = 0;
             this.HourlyRadioButton.TabStop = true;
             this.HourlyRadioButton.Text = "Hourly";
             this.HourlyRadioButton.UseVisualStyleBackColor = true;
+            this.HourlyRadioButton.CheckedChanged += new System.EventHandler(this.HourlyRadioButton_CheckedChanged);
             // 
             // SalaryRadioButton
             // 
@@ -240,20 +241,20 @@
             this.SalaryRadioButton.Location = new System.Drawing.Point(127, 18);
             this.SalaryRadioButton.Name = "SalaryRadioButton";
             this.SalaryRadioButton.Size = new System.Drawing.Size(78, 24);
-            this.SalaryRadioButton.TabIndex = 12;
+            this.SalaryRadioButton.TabIndex = 1;
             this.SalaryRadioButton.Text = "Salary";
             this.SalaryRadioButton.UseVisualStyleBackColor = true;
             this.SalaryRadioButton.CheckedChanged += new System.EventHandler(this.SalaryRadioButton_CheckedChanged);
             // 
-            // label8
+            // Pay1Label
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(31, 189);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 20);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Hourly Rate:";
+            this.Pay1Label.AutoSize = true;
+            this.Pay1Label.Location = new System.Drawing.Point(31, 189);
+            this.Pay1Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Pay1Label.Name = "Pay1Label";
+            this.Pay1Label.Size = new System.Drawing.Size(97, 20);
+            this.Pay1Label.TabIndex = 14;
+            this.Pay1Label.Text = "Hourly Rate:";
             // 
             // Pay1TextBox
             // 
@@ -261,7 +262,7 @@
             this.Pay1TextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Pay1TextBox.Name = "Pay1TextBox";
             this.Pay1TextBox.Size = new System.Drawing.Size(178, 26);
-            this.Pay1TextBox.TabIndex = 13;
+            this.Pay1TextBox.TabIndex = 6;
             // 
             // Pay2Label
             // 
@@ -279,7 +280,7 @@
             this.Pay2TextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Pay2TextBox.Name = "Pay2TextBox";
             this.Pay2TextBox.Size = new System.Drawing.Size(178, 26);
-            this.Pay2TextBox.TabIndex = 15;
+            this.Pay2TextBox.TabIndex = 7;
             // 
             // eventLog1
             // 
@@ -293,7 +294,7 @@
             this.Controls.Add(this.Pay2TextBox);
             this.Controls.Add(this.Pay1TextBox);
             this.Controls.Add(this.Pay2Label);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.Pay1Label);
             this.Controls.Add(this.SalaryRadioButton);
             this.Controls.Add(this.HourlyRadioButton);
             this.Controls.Add(this.BenefitsPackage);
@@ -338,7 +339,7 @@
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.TextBox VacationTextBox;
         public System.Windows.Forms.Button SubmitButton;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label Pay1Label;
         public System.Windows.Forms.TextBox Pay1TextBox;
         private System.Windows.Forms.Label Pay2Label;
         public System.Windows.Forms.TextBox Pay2TextBox;

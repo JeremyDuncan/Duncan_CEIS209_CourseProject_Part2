@@ -28,10 +28,32 @@ namespace Duncan_courseproject_part2
         {
             this.DialogResult = DialogResult.Cancel;
         }
+        private void HourlyRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowControls();
+        }
 
         private void SalaryRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-
+            ShowControls();
         }
+
+        private void ShowControls()
+        {
+            if (HourlyRadioButton.Checked)
+            {
+                Pay1Label.Text = "Hourly Rate: ";
+                Pay2Label.Text = "Hours Worked: ";
+                Pay2Label.Visible = true;
+                Pay2TextBox.Visible = true;
+            }
+            else if ( SalaryRadioButton.Checked)
+            {
+                Pay1Label.Text = "Annual Salary: ";
+                Pay2Label.Visible = false;
+                Pay2TextBox.Visible = false;
+            }
+        }
+
     }
 }

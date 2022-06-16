@@ -38,17 +38,20 @@
             // EmployeesListBox
             // 
             this.EmployeesListBox.FormattingEnabled = true;
-            this.EmployeesListBox.Location = new System.Drawing.Point(12, 51);
+            this.EmployeesListBox.ItemHeight = 20;
+            this.EmployeesListBox.Location = new System.Drawing.Point(18, 78);
+            this.EmployeesListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EmployeesListBox.Name = "EmployeesListBox";
-            this.EmployeesListBox.Size = new System.Drawing.Size(475, 186);
+            this.EmployeesListBox.Size = new System.Drawing.Size(810, 284);
             this.EmployeesListBox.TabIndex = 0;
             this.EmployeesListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.EmployeesListBox_MouseDoubleClick);
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(12, 8);
+            this.AddButton.Location = new System.Drawing.Point(18, 12);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(75, 23);
+            this.AddButton.Size = new System.Drawing.Size(112, 35);
             this.AddButton.TabIndex = 1;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
@@ -56,9 +59,10 @@
             // 
             // Remove_Button
             // 
-            this.Remove_Button.Location = new System.Drawing.Point(86, 8);
+            this.Remove_Button.Location = new System.Drawing.Point(129, 12);
+            this.Remove_Button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Remove_Button.Name = "Remove_Button";
-            this.Remove_Button.Size = new System.Drawing.Size(75, 23);
+            this.Remove_Button.Size = new System.Drawing.Size(112, 35);
             this.Remove_Button.TabIndex = 2;
             this.Remove_Button.Text = "Remove";
             this.Remove_Button.UseVisualStyleBackColor = true;
@@ -66,9 +70,10 @@
             // 
             // DipsplayButton
             // 
-            this.DipsplayButton.Location = new System.Drawing.Point(160, 8);
+            this.DipsplayButton.Location = new System.Drawing.Point(240, 12);
+            this.DipsplayButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DipsplayButton.Name = "DipsplayButton";
-            this.DipsplayButton.Size = new System.Drawing.Size(75, 23);
+            this.DipsplayButton.Size = new System.Drawing.Size(112, 35);
             this.DipsplayButton.TabIndex = 3;
             this.DipsplayButton.Text = "Display";
             this.DipsplayButton.UseVisualStyleBackColor = true;
@@ -76,9 +81,10 @@
             // 
             // PrintPaychecksButton
             // 
-            this.PrintPaychecksButton.Location = new System.Drawing.Point(234, 8);
+            this.PrintPaychecksButton.Location = new System.Drawing.Point(351, 12);
+            this.PrintPaychecksButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PrintPaychecksButton.Name = "PrintPaychecksButton";
-            this.PrintPaychecksButton.Size = new System.Drawing.Size(101, 23);
+            this.PrintPaychecksButton.Size = new System.Drawing.Size(152, 35);
             this.PrintPaychecksButton.TabIndex = 4;
             this.PrintPaychecksButton.Text = "Print Paychecks";
             this.PrintPaychecksButton.UseVisualStyleBackColor = true;
@@ -86,14 +92,15 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 249);
+            this.ClientSize = new System.Drawing.Size(847, 383);
             this.Controls.Add(this.PrintPaychecksButton);
             this.Controls.Add(this.DipsplayButton);
             this.Controls.Add(this.Remove_Button);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.EmployeesListBox);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
             this.Text = "Payroll System";
             this.Load += new System.EventHandler(this.MainForm_Load);
