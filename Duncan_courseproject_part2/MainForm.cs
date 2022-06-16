@@ -147,7 +147,13 @@ namespace Duncan_courseproject_part2
 
         private void PrintPaychecksButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Printing paychecks for all employees...");
+            string paycheckDisplay = "";
+            foreach (Employee emp in EmployeesListBox.Items)
+            {
+                paycheckDisplay += emp.ToString() + ", Biweekly Pay: " + emp.CalculatePay().ToString("C2")
+                    + '\n' + '\n';
+            }
+            MessageBox.Show(paycheckDisplay);
         }
 
         private void MainForm_Load(object sender, EventArgs e)

@@ -43,10 +43,10 @@ namespace Duncan_courseproject_part2
             {
                 double basePay = HourlyRate * 40.0f;
                 double overtime = (hoursWorked - 40.0f) * hourlyRate * 1.5f;
-                pay = basePay + overtime;
+                pay = (basePay + overtime) * 2; // Calculates biweekly pay with overtime
             } else
             {
-                pay = hoursWorked * hourlyRate;
+                pay = (hoursWorked * hourlyRate) * 2; //calculate biweekly pay
             }
 
             return pay;
