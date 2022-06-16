@@ -158,8 +158,7 @@ namespace Duncan_courseproject_part2
 
         private void EmployeesListBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            // edit selscted employee in the listbox
-
+            // edit selected employee in the listbox
             InputForm frmUpdate = new InputForm();
 
             using(frmUpdate)
@@ -206,6 +205,8 @@ namespace Duncan_courseproject_part2
 
                     EmployeesListBox.Items.RemoveAt(itemNumber);
 
+
+                    // get user's updated input and create an Employee object
                     string fName = frmUpdate.FirstNameTextBox.Text;
                     string lName = frmUpdate.LastNameTextBox.Text;
                     string ssn = frmUpdate.SSNTextBox.Text;
@@ -221,7 +222,19 @@ namespace Duncan_courseproject_part2
                     int vacation = Int32.Parse(frmUpdate.VacationTextBox.Text);
 
                     Benefits benefits = new Benefits(healthIns, lifeIns, vacation);
-                    emp = new Employee(fName, lName, ssn, hireDate, benefits);
+
+                    if (frmUpdate.HourlyRadioButton.Checked)
+                    {
+                        float rate = float.Parse(frmUpdate.Pay1TextBox.Text);
+                        float hours = float.Parse(frmUpdate.Pay2TextBox.Text);
+
+                        emp = new Hourly(fName, lName, ssn, hireDate, benefits, rate, hours);
+                    }
+                    else if (frmUpdate.SalaryRadioButton.Checked) 
+                    {
+                        double salary = Double.Parse(frmUpdate.Pay1TextBox.Text);
+                        emp = new Salary(fName, lName, ssn, hireDate, benefits, salary);
+                    }
 
                     //add the updated Employee object to the employees listbox
                     EmployeesListBox.Items.Add(emp);
