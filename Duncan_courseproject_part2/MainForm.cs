@@ -172,7 +172,7 @@ namespace Duncan_courseproject_part2
                 if (itemNumber >= 0)
                 {
                     Employee emp = (Employee)EmployeesListBox.Items[itemNumber];
-
+              
                     frmUpdate.FirstNameTextBox.Text = emp.FirstName;
                     frmUpdate.LastNameTextBox.Text = emp.LastName;
                     frmUpdate.SSNTextBox.Text = emp.SSN;
@@ -181,12 +181,28 @@ namespace Duncan_courseproject_part2
                     frmUpdate.LifeInsTextBox.Text = emp.BenefitsPackage.LifeIns.ToString("C2");
                     frmUpdate.VacationTextBox.Text = emp.BenefitsPackage.Vacation.ToString();
 
+                    if(emp is Hourly)
+                    {
+                        Hourly hrly = (Hourly)emp;
+                        frmUpdate.HourlyRadioButton.Checked = true;
+                        frmUpdate.Pay1TextBox.Text = hrly.HourlyRate.ToString("N2");
+                        frmUpdate.Pay2TextBox.Text = hrly.HoursWorked.ToString("N1");
+                    }
+                    else if (emp is Salary)
+                    {
+                        Salary sal = (Salary)emp;
+                        frmUpdate.SalaryRadioButton.Checked = true;
+                        frmUpdate.Pay1TextBox.Text = sal.AnnualSalary.ToString("N2");
+                    }
+
+
                     DialogResult result = frmUpdate.ShowDialog();
                     
                     if (result == DialogResult.Cancel)
                     {
                         return; //End the Method siince user cancelled the update
                     }
+                
 
                     EmployeesListBox.Items.RemoveAt(itemNumber);
 

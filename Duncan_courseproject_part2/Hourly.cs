@@ -32,8 +32,8 @@ namespace Duncan_courseproject_part2
         // behaviors 
         public override string ToString()
         {
-            return base.ToString() + ", Hourly Rate: " + hourlyRate.ToString("C")
-            + ", Hours Worked: " + hoursWorked.ToString();
+            return base.ToString() + ", Rate: " + hourlyRate.ToString("C")
+            + ", Hours: " + hoursWorked.ToString();
         }
 
         public override double CalculatePay()
