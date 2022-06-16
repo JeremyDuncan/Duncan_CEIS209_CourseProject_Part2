@@ -1,5 +1,7 @@
 ﻿using System;
-using System.IO;
+using System.Collections.Generic;
+using System.IO;                                        // required to read/write to files
+using System.Runtime.Serialization.Formatters.Binary;   // "translator" to binary
 using System.Windows.Forms;
 
 namespace Duncan_courseproject_part2
@@ -69,21 +71,26 @@ namespace Duncan_courseproject_part2
 
         private void WriteEmpsToFile()
         {
-            string fileName = "Employees.csv";
-            StreamWriter sw = new StreamWriter(fileName);
-            for (int i = 0; i < EmployeesListBox.Items.Count; i++)
-            {
-                Employee worker = (Employee)EmployeesListBox.Items[i];
-                sw.WriteLine(worker.FirstName + "," +
-                             worker.LastName + "," +
-                             worker.SSN + "," +
-                             worker.HireDate.ToShortDateString() + "," +
-                             worker.BenefitsPackage.HealthIns + "," +
-                             worker.BenefitsPackage.LifeIns + "," +
-                             worker.BenefitsPackage.Vacation);
 
+            // convert lisbox items to generic list
+            List<Employee> empList = new List<Employee>();
+
+            foreach (Employee emp in EmployeesListBox.Items)
+            {
+                empList.Add(emp);
             }
-            sw.Close();
+
+            // open pipe to file and creat translator
+            FileStream fs = new FileStream("Clients.dat", FileMode.Create);
+            BinaryFormatter formatter = new BinaryFormatter();
+
+            // write the generic list to the file
+            formatter.Serialize(fs, empList);
+
+            // close the pipe
+            fs.Close();
+
+            // tell user that records were written to file
             MessageBox.Show("Employees file has been updated.");
         }
 
